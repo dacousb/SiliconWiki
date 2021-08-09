@@ -1,0 +1,43 @@
+#-----------------------------------------------#
+███████╗██╗██╗     ██╗ ██████╗ ██████╗ ███╗   ██╗
+██╔════╝██║██║     ██║██╔════╝██╔═══██╗████╗  ██║
+███████╗██║██║     ██║██║     ██║   ██║██╔██╗ ██║
+╚════██║██║██║     ██║██║     ██║   ██║██║╚██╗██║
+███████║██║███████╗██║╚██████╗╚██████╔╝██║ ╚████║
+╚══════╝╚═╝╚══════╝╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝
+           ██╗    ██╗██╗██╗  ██╗██╗
+           ██║    ██║██║██║ ██╔╝██║
+           ██║ █╗ ██║██║█████╔╝ ██║
+           ██║███╗██║██║██╔═██╗ ██║
+           ╚███╔███╔╝██║██║  ██╗██║
+            ╚══╝╚══╝ ╚═╝╚═╝  ╚═╝╚═╝
+#-----------------------------------------------#
+SiliconWiki is a simple and lightweight wiki software.
+
+You can host your own instances, just
+keep the copyright notices. Not to mention
+that you need to follow the MIT license.
+
+First, create a blank database using
+`python table.py -db`
+
+Then, run the webserver with
+`flask run`
+
+SiliconWiki is in a very early stage of development,
+and does not have many features, both in terms of
+usability and security.
+
+The database can be replaced by a MySQL database
+if performance is required for large wikis.
+
+SiliconWiki has the following features:
+    - Database storage by default
+    - Create and edit wiki articles
+    - Included mini-search engine
+    - Ease of use
+
+To do:
+    - History of edits
+    - Tags (topics)
+    - Captcha to avoid spam

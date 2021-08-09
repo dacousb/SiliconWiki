@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Editing {{title}} - SiliconWiki</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div>
+        <span>[ <a href="/">home</a> ]</span>
+        <span style="float:right;">
+            [ <a href="/edit/{{title}}">edit</a> ]
+        </span>
+    </div>
+    <div class="content">
+        <h1>{{title}}</h1>
+        <form action="/post/{{title}}" id="edit" method="POST">
+            <div class="border"><textarea name="content" form="edit">{{content}}</textarea></div>
+            <br><input type="submit" class="submit" value="Publish changes" style="width:100%;">
+        </form>
+    </div>
+</body>
+
+</html>

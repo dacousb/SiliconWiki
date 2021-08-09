@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SiliconWiki - {{title}}</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div>
+        <span>[ <a href="/">home</a> ]</span>
+        <span style="float:right">
+            <form action="/search" style="display:inline;">
+                <input type="text" name="q" size="25" placeholder="Search all over the wiki!" {% if query
+                    %}value="{{query}}" {% endif %}>
+                <input type="submit" value="Search">
+            </form>
+        </span>
+    </div>
+    <div class="content">
+        {% if query %}
+        <h1>{{title}} of {{query}}</span></h1>
+        {% if result %}
+        {% for r in result%}
+        <ul>
+            <li><a href="/wiki/{{r}}">{{r}}</a></li>
+        </ul>
+        {% endfor %}
+        {% else %}
+        <p>There are no results matching your search.</p>
+        {% endif %}
+        <h3>Willing to create a new article?</h3>
+        <p>If you think this article (<i>{{query}}</i>) should exist, you can [ <a href="/create/{{query}}">create
+                it</a> ]</p>
+        {% else %}
+        <h1>{{title}} <span>[ <a href="/edit/{{title}}">edit</a> ]</span></h1>
+        <div>{{content|safe}}</div>
+        {% endif %}
+    </div>
+</body>
+
+</html>

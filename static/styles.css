@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.875em;
+}
+
+h1>span {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-bottom: 1px solid #666666
+}
+
+textarea {
+    border: none;
+    height: 70vh;
+    margin: 0 0 10px 0;
+    outline: none;
+    padding: 0;
+    resize: none;
+    width: 100%;
+}
+
+.border {
+    border: solid 1px #8d8d8d;
+    padding: 10px;
+    border-radius: 4px;
+}
