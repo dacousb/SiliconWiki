@@ -54,4 +54,4 @@ def search_for(query):
     for row in get_rows():
         if query in row[0].lower():
             result.append(row[0])
-    return result if result else None
+    return result
