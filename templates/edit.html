@@ -19,6 +19,9 @@
         <h1>{{title}}</h1>
         <form action="/post/{{title}}" id="edit" method="POST">
             <div class="border"><textarea name="content" form="edit">{{content}}</textarea></div>
+            {% if protected %}
+            <input type="text" size="30" placeholder="You cannot edit this without a PIN" name="pin">
+            {% endif %}
             <br><input type="submit" class="submit" value="Publish changes" style="width:100%;">
         </form>
     </div>

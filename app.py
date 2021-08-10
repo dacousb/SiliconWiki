@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, abort
 from articles import get_article, save_edit, search_for
 from table import get_rows
+import config
 
 app = Flask(__name__, template_folder="templates")
 app.config["TEMPLATES_AUTO_RELOAD"] = True
@@ -31,7 +32,8 @@ def edit(article_name):
     if not article_object.found:
         abort(404)
     return redirect("/edit/" + title) if title != article_name else\
-        render_template("edit.html", title=title, content=content)
+        render_template("edit.html", title=title, content=content,
+                        protected=True if article_name in config.protected_pages else False)
 
 
 @app.route("/create/<article_name>/")
@@ -57,6 +59,9 @@ def search():
 @app.route("/post/<article_name>/", methods=["POST"])
 def post(article_name):
     content = request.form["content"]
+    pin = request.form["pin"]
+    if article_name in config.protected_pages and pin != config.protected_pages_pin:
+        abort(403)
     if content:
         save_edit(article_name, content)
         return redirect("/wiki/" + article_name)
